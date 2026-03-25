@@ -81,7 +81,7 @@ RegisterCommand(
   (_: string, args: string[]) => {
     exp.screencapture.remoteUpload(
       args[0],
-      'https://api.fivemanage.com/api/image',
+      'https://api.fivemanage.com/api/v3/file',
       {
         encoding: 'webp',
         headers: {
@@ -101,7 +101,7 @@ RegisterCommand(
 ## Lua example with `remoteUpload`
 
 ```lua
-exports.screencapture:remoteUpload(args[1], "https://api.fivemanage.com/api/image", {
+exports.screencapture:remoteUpload(args[1], "https://api.fivemanage.com/api/v3/file", {
     encoding = "webp",
     headers = {
         ["Authorization"] = ""
@@ -117,7 +117,7 @@ For users with 4K, ultrawide, or other high-resolution displays, you can customi
 
 ```lua
 -- Allow higher resolution for better quality (may increase upload time)
-exports.screencapture:remoteUpload(args[1], "https://api.fivemanage.com/api/image", {
+exports.screencapture:remoteUpload(args[1], "https://api.fivemanage.com/api/v3/file", {
     encoding = "webp",
     maxWidth = 2560,
     maxHeight = 1440,
@@ -129,7 +129,7 @@ exports.screencapture:remoteUpload(args[1], "https://api.fivemanage.com/api/imag
 end, "blob")
 
 -- Use lower resolution for faster uploads
-exports.screencapture:remoteUpload(args[1], "https://api.fivemanage.com/api/image", {
+exports.screencapture:remoteUpload(args[1], "https://api.fivemanage.com/api/v3/file", {
     encoding = "webp",
     maxWidth = 1280,
     maxHeight = 720,
@@ -149,7 +149,7 @@ end, "blob")
 #### This is NOT recommended to use, as you risk exposing tokens to clients.
 
 ```lua
-exports['screencapture']:requestScreenshotUpload('https://api.fivemanage.com/api/image', 'file', {
+exports['screencapture']:requestScreenshotUpload('https://api.fivemanage.com/api/v3/file', 'file', {
     headers = {
         ["Authorization"] = API_TOKEN
     },
