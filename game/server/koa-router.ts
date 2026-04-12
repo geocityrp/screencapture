@@ -258,6 +258,10 @@ async function uploadStreamFile(url: string, config: StreamRemoteConfig, buf: Bu
     knownLength: buf.length,
   });
 
+  if (config.path) {
+    formData.append('path', config.path);
+  }
+
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -293,6 +297,9 @@ function createRequestBody(
       });
       if (filename) {
         formData.append('filename', filename);
+      }
+      if (config.path) {
+        formData.append('path', config.path);
       }
 
       return resolve(formData);

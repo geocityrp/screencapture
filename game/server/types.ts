@@ -48,6 +48,7 @@ export interface StreamRemoteConfig {
   headers?: HeadersInit;
   formField?: string; // defaults to 'file'
   filename?: string; // becomes <filename>.webm — defaults to 'recording'
+  path?: string; // remote folder path (e.g. fivemanage storage path)
 }
 
 // Parameters accepted by UploadStore.addStream() — tempFilePath is derived
@@ -78,6 +79,7 @@ export interface CaptureOptions {
   encoding?: string;
   maxWidth?: number;
   maxHeight?: number;
+  path?: string; // remote folder path (e.g. fivemanage storage path)
 }
 
 export type CallbackFn = (data: unknown, _playerSource?: number, correlationId?: string) => void;

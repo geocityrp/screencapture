@@ -56,6 +56,7 @@ global.exports(
         headers: options?.headers,
         formField: options?.formField,
         filename: options?.filename,
+        path: options?.path,
       },
     });
 
