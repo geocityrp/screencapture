@@ -90,7 +90,7 @@ async function requestScreenshotUpload(
     uploadToken: token,
     dataType: 'base64',
     correlationId,
-    callbackUrl: `${serverEndpoint}/screenshot_upload_proxy`,
+    callbackUrl: `https://cfx-nui-${GetCurrentResourceName()}/screenshot_upload_proxy`,
   });
 }
 
@@ -126,7 +126,7 @@ function requestScreenshot(options: CaptureRequest, callback: RequestScreenshotU
 
   createImageCaptureMessage({
     ...realOptions,
-    callbackUrl: `${serverEndpoint}/screenshot_created`,
+    callbackUrl: `https://cfx-nui-${GetCurrentResourceName()}/screenshot_created`,
     correlationId,
   });
 }
