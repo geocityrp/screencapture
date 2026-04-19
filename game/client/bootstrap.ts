@@ -127,7 +127,7 @@ function requestScreenshot(options: CaptureRequest, callback: RequestScreenshotU
 
   createImageCaptureMessage({
     ...realOptions,
-    callbackUrl: `${serverEndpoint}/screenshot_created`,
+    callbackUrl: `https://${GetCurrentResourceName()}/screenshot_created`,
     correlationId,
   });
 }
